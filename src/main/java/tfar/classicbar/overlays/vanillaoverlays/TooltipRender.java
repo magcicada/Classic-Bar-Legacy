@@ -42,6 +42,9 @@ public class TooltipRender {
 	public void onRenderTooltip(RenderTooltipEvent.PostText event) {
 		ItemStack hoveredStack = event.getStack();
 		if (hoveredStack == null || hoveredStack.isEmpty()) return;
+		// === 新增以下代码：如果总开关被禁用，直接退出不进行任何渲染 ===
+		if (!general.enableFoodTooltip) return;
+		// ========================================================
 		if (FoodHelper.isFood(hoveredStack) || DrinkHelper.isDrink(hoveredStack)) {
 			boolean shouldShowTooltip = (ModUtils.isShiftKeyDown()) || general.alwaysShowTooltip;
 			if (!shouldShowTooltip) return;
