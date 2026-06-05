@@ -46,6 +46,11 @@ public class ModConfig {
         @Config.Name("Always Show Food Values Tooltip")
         @Config.Comment("Whether to show food values tooltip without shift down.")
         public boolean alwaysShowTooltip = true;
+        // === 新增以下代码：完全关闭经典血条食物Tooltip的总开关 ===
+        @Config.Name("Enable Food/Drink Tooltip")
+        @Config.Comment("Set to false to completely disable Classic Bar's own food and drink status tooltip.")
+        public boolean enableFoodTooltip = true; 
+        // ========================================================
 
 
         public class BarOverlays {
